@@ -1,0 +1,6 @@
+<div class='container'>
+  <h5><a [routerLink]="['']">Home</a></h5>
+  <h5><a [routerLink]="['new_question']">Add A Question</a></h5>
+</div>
+
+<router-outlet (aTaskEventEmitter)="dataFromChild($event)"></router-outlet>

@@ -1,0 +1,69 @@
+/*CSS reset settings here*/
+*{
+    margin: 0px;
+   padding: 0px;
+   }
+   
+   #container{
+    height: 1215px;
+    width: 970px;
+    background-color: White;
+    margin: 0px auto;
+    margin-top: 15px;
+    /* margin-left: 15px;*/ 
+   }
+   
+   .messages p {
+       color: red;
+   }
+
+   .success p {
+       color: blue;
+   }
+   
+   .add_question {
+       width: 600px;
+       margin-bottom: 10px;
+       display: inline-block;
+       vertical-align: top;
+   }
+   
+   .login {
+       width: 350px;
+       margin-bottom: 10px;
+       display: inline-block;
+       vertical-align: top;
+   }
+   
+   .pair {
+       width: 600px;
+       height: 25px;
+       margin-top: 10px;
+   }
+   
+   .pair p {
+     width: 110px;
+     display:inline-block;
+     text-align: left;
+     padding-right: 5px;
+   }
+
+   .pair p.error {
+    width: 250px;
+    color: red;
+    display:inline-block;
+    text-align: left;
+    padding-right: 5px;
+  }
+   
+   /* .ng-invalid { border: red solid 1px }
+   .ng-invalid span.error { color: red;
+                  display: inline;
+        }
+   .ng-valid { border: green solid 1px } */
+   /*.ng-valid p.error {  }
+   .ng-untouched p.error {display: none }
+   .ng-touched p.error { color: red;
+                 display: inline; }
+   .ng-dirty { }
+   .ng-pristine { } */

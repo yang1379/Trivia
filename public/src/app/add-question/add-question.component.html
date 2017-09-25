@@ -1,0 +1,80 @@
+<div class = 'container'>
+
+  <h2>New Question</h2>
+
+  <div class='add_question'>
+    <form action="/add_question" #formCtrl="ngForm" method="post">
+    
+      <div class='pair'>
+          <p id='pQuestion'>Question:</p>
+          <input type='text'
+          required
+          minlength="15"
+          name='first_name'
+          maxlength="200"
+          [(ngModel)]="questionDataInst.question"
+          #pQuestion='ngModel'>
+          <span *ngIf="pQuestion.errors?.required && pQuestion.dirty && pQuestion.invalid"><p class="error">Question field is required</p></span>
+          <span *ngIf="pQuestion.errors?.minlength && pQuestion.dirty && pQuestion.invalid"><p class="error">Question has to contain at least 15 characters.</p></span>
+          <!-- <p class="error">{{ pQuestion.errors?.required}}</p>
+          <p class="error">{{ quest | json }}</p> -->
+      </div>
+
+      <div class='pair'>
+        <p id='pCorrect'>Correct Answer:</p>
+        <input type='text'
+        required
+        minlength="1"
+        maxlength="200"
+        name='pCorrect'
+        [(ngModel)]="questionDataInst.correct"
+        #pCorrect='ngModel'>
+        <span *ngIf="pCorrect.errors?.required && pCorrect.touched && pCorrect.invalid"><p class="error">Correct Answer field is required</p></span>
+        <span *ngIf="pCorrect.errors?.minlength && pCorrect.touched && pCorrect.invalid"><p class="error">Correct Answer has to contain at least 1 character.</p></span>
+        <!-- <p class="error">{{ pCorrect.errors | json }}</p>
+        <p class="error">{{ correct | json }}</p> -->
+        <!-- <span *ngIf="last_name.value != first_name.value && last_name.touched"><p class="error">Last name does not match abc.</p></span> -->
+      </div>
+
+      <div class='pair'>
+        <p id='pFake1'>Fake Answer 1:</p>
+        <input type='text'
+        required
+        minlength="1"
+        maxlength="200"
+        name='pFake1'
+        [(ngModel)]="questionDataInst.fake_one"
+        #pFake1='ngModel'>
+        <span *ngIf="pFake1.errors?.required && pFake1.touched && pFake1.invalid"><p class="error">Fake Answer 1 field is required</p></span>
+        <span *ngIf="pFake1.errors?.minlength && pFake1.touched && pFake1.invalid"><p class="error">Fake Answer 1 has to contain at least 1 character.</p></span>
+        <!-- <p class="error">{{ pFake1.errors?.pattern | json }}</p> -->
+      </div>
+
+      <div class='pair'>
+        <p id='pFake2'>Fake Answer 2:</p>
+        <input type='text'
+        required
+        minlength="1"
+        maxlength="200"
+        name='pFake2'
+        [(ngModel)]="questionDataInst.fake_two"
+        #pFake2='ngModel'>
+        <span *ngIf="pFake2.errors?.required && pFake2.touched && pFake2.invalid"><p class="error">Fake Answer 2 field is required</p></span>
+        <span *ngIf="pFake2.errors?.minlength && pFake2.touched && pFake2.invalid"><p class="error">Fake Answer 2 has to contain at least 1 character.</p></span>
+        <!-- <p class="error">{{ pFake2.errors?.pattern | json }}</p> -->
+      </div>
+
+
+      <br>
+      <button type="button" [disabled]="!formCtrl.form.valid" (click)="addQuestion()">Add Question</button>
+      <br>
+
+      <br>
+      <!-- <p class="error">{{ !formCtrl.form.valid | json }}</p> -->
+      <button type="button" (click)="cancel()">Cancel</button>
+      <br>
+    
+    </form>
+  </div>
+
+</div>
